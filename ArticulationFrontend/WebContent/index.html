@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ARTICULATIONS</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: BizPage
+    Theme URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+</head>
+
+<body id="page-top" body ng-app="myApp">
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+<div ng-controller="userController as contro" >
+
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container-fluid">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="#!index" class="scrollto">ARTICULATION</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="#!index"></a>
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          
+          <li class="nav-item" ng-show="currentUser.role == 'USER' ">
+		  <a href="#!listUser">USERS</a>
+		  </li>
+          <li class="nav-item" ng-show="currentUser.role == 'USER' ">
+		  <a href="#!approvedBlogList">BLOG</a>
+		  </li>
+          <li class="nav-item" ng-show="currentUser.role == 'USER' ">
+		  <a href="#!approvedForumList">FORUM</a>
+		  </li>
+          <li class="nav-item" ng-show="currentUser.role == 'USER'" ng-hide="currentUser.role != 'ADMIN'">
+		  <a href="#!viewJob">JOB</a>
+		  </li>
+		  <li class="nav-item" ng-show="currentUser.role == 'USER'">
+            <a class="nav-link js-scroll-trigger" href="#!friend">FRIENDS</a>
+          </li>
+		   <li class="nav-item" ng-show="currentUser.role == 'USER'">
+            <a class="nav-link js-scroll-trigger" href="#!chat">CHAT</a>
+          </li>
+		   <li class="nav-item" ng-show="currentUser.role == 'USER'">
+            <a class="nav-link js-scroll-trigger" href="#!notificationindetail">NOTIFICATION</a>
+          </li>
+		  <li class="nav-item" ng-show="currentUser.role == 'ADMIN'">
+            <a class="nav-link js-scroll-trigger" href="#!allBlogs">BLOGS APPROVAL</a>
+          </li>
+		  <li class="nav-item" ng-show="currentUser.role == 'ADMIN'">
+            <a class="nav-link js-scroll-trigger" href="#!forumList">FORUM APPROVAL</a>
+          </li>
+		  <li class="nav-item" ng-show="currentUser.role == 'ADMIN'">
+            <a class="nav-link js-scroll-trigger" href="#!addJob">POST JOB</a>
+          </li>
+           <li class="nav-item" ng-show="currentUser.role == 'ADMIN'">
+            <a class="nav-link js-scroll-trigger" href="#!allJobApplications">JOB APPROVAL</a>
+          </li>
+          <li class="nav-item" ng-show="currentUser.role == 'USER'">
+            <a class="nav-link js-scroll-trigger" href="#!friendRequest">FRIEND REQUEST</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#!myProfile" ng-show="currentUser.role == 'USER'" ng-hide="currentUser.role != 'ADMIN'">Hello{{currentUser.name}}</a>
+          </li>
+          
+           <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#!ImageUpload" ng-show="currentUser.role == 'USER'" ng-hide="currentUser.role != 'ADMIN'">ImageUpload</a>
+          </li>
+          <li class="nav-item" ng-show="currentUser.role != 'USER'" ng-hide="currentUser.role == 'ADMIN'">
+            <a class="nav-link js-scroll-trigger" href="#!createUser">REGISTER</a>
+          </li>
+		  <li class="nav-item" ng-show="currentUser.role != 'USER'" ng-hide="currentUser.role == 'ADMIN'">
+            <a class="nav-link js-scroll-trigger" href="#!login">LOGIN</a>
+          </li>
+		  <li class="nav-item" ng-show="currentUser.role == 'USER'" ng-hide="currentUser.role != 'ADMIN'">
+            <a class="nav-link js-scroll-trigger"href="#!index"  ng-click="contro.logout(currentUser,currentUser.userId)" >LOGOUT</a>
+          </li>
+          
+          
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    
+  ============================-->
+  
+  
+  
+  
+  <section id="intro">
+    <div class="intro-container">
+      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+        <ol class="carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-item active" style="background-image: url('img/intro-carousel/about-plan.jpg');">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>BLOGGING</h2>
+                <p>WE PROVIDES THE BEST EXPERIENCE TO BLOG AND TO INTERACT WITH PEOPLE ALL AROUND THE WORLD</p>
+                <a href="" ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url('img/intro-carousel/2.jpg');">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>FORUM</h2>
+                <p>READ PARTICIPATE AND INTERACT WITH VARIOUS PEOPLE ON FORUM WITH RELEVANT TOPICS</p>
+                <a href="" ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url('img/intro-carousel/4.jpg');">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>JOBS</h2>
+                <p>FIND THE BEST JOB SUITABLE FOR YOU AND APPLY FOR A BETTER CARRER OPPORTUNITY </p>
+                <a href="" ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url('img/intro-carousel/3.jpg');">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>CHAT</h2>
+                <p>CHAT AND INTERACT WITH FRIENDS ANYWHERE ANYTIME</p>
+                <a href="" ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url('img/intro-carousel/5.jpg');">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>CREATE FRIENDS</h2>
+                <p>SEARCH YOUR FRIENDS TO GET IN TOUCH WITH THEM </p>
+                <a href="" ></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon ion-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+      </div>
+    </div>
+  </section><!-- #intro -->
+
+  <main id="main">
+  
+    <!--==========================
+      Featured Services Section
+    ============================-->
+    <section id="featured-services">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 box">
+            <i class="ion-ios-bookmarks-outline"></i>
+            <h4 class="title"><a href="">CREATIVE</a></h4>
+            <p class="description">ARTICULATION PROVIDES YOU THE PLATFORM TO SHARE YOUR CREATIVITY AND LET THE WORLD EXPERIENCE IT </p>
+          </div>
+
+          <div class="col-lg-4 box box-bg">
+            <i class="ion-ios-stopwatch-outline"></i>
+            <h4 class="title"><a href="">INNOVATIVE</a></h4>
+            <p class="description">WE PROVIDES SELF INNOVATIVE IDEAS TO KEEP URSELF UPGRATED WIT TECHNOLOGIES AROUND YOU </p>
+          </div>
+
+          <div class="col-lg-4 box">
+            <i class="ion-ios-heart-outline"></i>
+            <h4 class="title"><a href="">USER FRIENDLY</a></h4>
+            <p class="description">WE PROVIDES THE BEST USER INTRACTABILITY EXPERIENCE FOR USER TO INTERACT WITH PEOPLE </p>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- #featured-services -->
+
+
+
+
+
+  <!--   ng view starts -->
+  
+  
+  
+   
+   <div>
+   <ng-view></ng-view>
+   </div>
+  
+  
+  <!-- ng view ends -->
+  
+
+
+
+
+
+    <!--==========================
+      About Us Section
+    ============================-->
+    <section id="about">
+      <div class="container">
+
+        <header class="section-header">
+          <h3>About Us</h3>
+          <p>WE ARE ARTICULATION , WE CREATED THIS PLATFORM TO PROVIDE YOU THE BEST USER FRIENDLY EXPERIENCE TO EXPLORE THE NEW ERA OF TECHNOLOGIES</p>
+        </header>
+
+        <div class="row about-cols">
+
+          <div class="section-header">
+            <div class="about-col">
+              <div class="img" align="center">
+                <img src="img/about-mission.jpg" alt="" class="img-fluid">
+                <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+              </div>
+              <h2 class="title"><a href="#">Our Mission</a></h2>
+              <p>
+                OUR MISSION IS TO PROVIDE SIMPLE URER FRIENDLY EXPERIENCE WITHOUT ANY HUSTLE AND BUSTLE SO THAT YOU CAN EXPLORE YOURSELF BETTER THEN ANYOTHER 
+              </p>
+            </div>
+          </div>
+
+          
+
+          
+
+        </div>
+
+      </div>
+    </section><!-- #about -->
+
+
+
+   
+    <!--==========================
+      Contact Section
+    ============================-->
+    <section id="contact" class="section-bg wow fadeInUp">
+      <div class="container">
+
+        
+
+        <div class="row contact-info">
+
+          <div class="col-md-4">
+            <div class="contact-address">
+              <i class="ion-ios-location-outline"></i>
+              <h3>Address</h3>
+              <address>INDIA</address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="ion-ios-telephone-outline"></i>
+              <h3>Phone Number</h3>
+              <p><a href="tel:+155895548855">+91 1236598657</a></p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-email">
+              <i class="ion-ios-email-outline"></i>
+              <h3>Email</h3>
+              <p><a href="mailto:info@example.com">info@example.com</a></p>
+            </div>
+          </div>
+
+        </div>
+
+       
+      </div>
+    </section><!-- #contact -->
+
+  </main>
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+         
+
+          
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              kolkata <br>
+              INDIA<br>
+               <br>
+              <strong>Phone:</strong> +91 1236598657<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+
+          
+
+          </div>
+
+         
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>ARTICULATION</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <script src="lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+  <!-- Contact Form JavaScript File -->
+<!--   <script src="contactform/contactform.js"></script>    -->
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+  
+  <script src="App/myApp.js"></script>
+
+
+<script src="User/userController.js"></script>
+<script src="User/userService.js"></script>
+
+
+<script src="Blog/blogService.js"></script>
+<script src="Blog/blogController.js"></script>
+
+
+<script src="BlogComment/blogCommentService.js"></script>
+<script src="BlogComment/blogCommentController.js"></script>
+
+
+<script src="Forum/forumService.js"></script>
+<script src="Forum/forumController.js"></script>
+
+
+<script src="ForumComment/forumCommentService.js"></script>
+<script src="ForumComment/forumCommentController.js"></script>
+
+
+<script src="Job/JobController.js"></script>
+<script src="Job/JobService.js"></script>
+
+
+
+<script src="Friend/friendController.js"></script>
+<script src="Friend/friendService.js"></script>
+
+
+<script src="Notification/NotificationService.js"></script>
+
+<script src="Notification/NotificationController.js"></script>
+
+
+<script src="Image/ImageController.js"></script>
+<script src="Image/ImageService.js"></script>
+
+
+<script src="Chat/sockjs.js"></script>
+<script src="Chat/sockjs-0.3.4.js"></script>
+<script src="Chat/stomp.js"></script>
+<script src="Chat/ChatController.js"></script>
+<script src="Chat/ChatService.js"></script>
+
+</body>
+</html>

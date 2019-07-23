@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
+    <title>Sign Up </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        body { padding-top:30px; }
+.form-control { margin-bottom: 10px; }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+</head>
+<style>
+body {
+ 
+ }
+</style>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4 well well-sm" >
+            <legend><a href="#!index"><i class="glyphicon glyphicon-globe"></i></a> Sign up!</legend>
+            <form:form method="POST" >
+            
+            <label for="userId">USERID</label>
+             <input class="form-control" name="userId" placeholder="UserID" type="text" ng-model="contro.user.userId" required="true" /> 
+            
+            
+			
+                <label for="name">NAME</label>
+                    <input class="form-control" name="name" placeholder="Enter FullName" type="text" ng-model="contro.user.name"
+                        required="true" />
+               
+                
+           <label for="contactNo">CONTACT NO</label>
+            <input class="form-control" name="contact" placeholder="Mobile No"  ng-model="contro.user.contactNo" type="text" pattern=".{10,}" title="Must contain 10 digit mobile number" required="true"/>
+                      
+                      <label for="password">PASSWORD</label>
+                      <input  class="form-control" name="password" placeholder="Password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  ng-model="contro.user.password" required />
+                      
+                      <label for="email">E-MAIL</label>
+                       <input  class="form-control" name="email" type="text" placeholder="Enter Email" ng-model="contro.user.email" required="true" />
+                      
+                            <label for="dob">Date Of Birth</label>
+                            <input type="date" placeholder="Enter DOB(DD/MM/YYYY)" ng-model="contro.user.dob"  required>
+                        <br><br>
+                        <label for="gender"><b>Gender</b></label>
+                        <select ng-model="contro.user.gender"  placeholder="Select" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        </select><br>
+                        
+                        <label for="address"><b>ADDRESS</b></label>					  
+					  <input  class="form-control" name="userAddress" placeholder="Address" type="text" ng-model="contro.user.address" required="true" />
+					     
+   
+   
+ 
+					  <br />
+         <button class="btn btn-lr btn-primary btn-block" type="submit" ng-click="contro.createUser(contro.user)">
+                Sign up</button>
+
+    </div>
+          
+            
+                </div>
+            </form:form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!-- all-user-view -->
+
+<div>
+	<div class="container">
+	<div>
+	
+	<div class="col-md-4" ng-repeat="blogComment in contro.blogComments">
+	<div>
+	<div>
+	<h3>{{blogComment.blogComment}}</h3>
+	<h3>{{blogComment.userName}}</h3>
+	<h3>{{blogComment.userId}}</h3>
+	                                     
+	
+	<div>
+	
+	
+<input type="button" class="btn btn-warning floatright"
+	ng-click="contro.getSelectedBlogComment(blogComment.blogCommentId)" 
+      value="Know More..">
+      
+
+	</div>
+	</div>
+	<div>
+	<h4><a><span><i class="fa fa-rss" aria-hidden="true"></i></span>{{blogComment.blogComment}}</a></h4>
+<ul style="text-align: center;">
+
+		</ul>
+		</div>
+		</div>
+		</div>
+		</div>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>
